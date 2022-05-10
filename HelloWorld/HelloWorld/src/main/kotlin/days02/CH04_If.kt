@@ -9,7 +9,7 @@ fun main(){
         println("a1은 10이 아니다")
     }
     println("----------------------------------")
-    //else문 : 조건식이 만족하지 않을 경우 수행
+    // else문 : 조건식이 만족하지 않을 경우 수행
     if(a1==10)println("a1은 10이다")
     else{
         println("a1은 10이 아니다")
@@ -31,8 +31,8 @@ fun main(){
     }
     println("----------------------------------")
 
-    var a4:String=""
-    var a5:Int=10
+    var a4:String = ""
+    var a5:Int = 10
 
     // 자바와 코틀린의 같은 if문 사용방법
     if(a5==10) a4 = "10이다"
@@ -47,6 +47,8 @@ fun main(){
     // 예제1
     val a6:String = if(a5==10) "10이다" else "10이 아니다"
     println("a6:$a6")
+
+    println("----------------------------------")
 
     // 예제2
     val a7:String = if(a5==10){
