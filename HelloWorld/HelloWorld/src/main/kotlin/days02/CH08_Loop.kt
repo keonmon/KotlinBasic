@@ -18,7 +18,7 @@ fun main(){
     println("\n-----------------------")
 
     //  10부터 1까지 줄어드는 범위데이터 사용
-    // val a3 = 10..1
+    // val a3 = 10..1   <- 잘 못된 사용 방법
     val a3 = 10 downTo 1
     for(item in a3){
         print("$item\t")

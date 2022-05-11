@@ -15,11 +15,11 @@ fun main(){
     val weekday:String = selectWeekday2(temp)
     println(weekday)
 
-
 }
+
 fun sumdays(y:Int, m:Int, d:Int):Int{
     var days:Int = 0
-    val mdays = arrayOf(31,28,31,30,31,30,31,31,30,31,30,31)    //배열 생성
+    val mdays = arrayOf(0,31,28,31,30,31,30,31,31,30,31,30,31)    //배열 생성
     if(y%4==0 && y%100!=0 || y%400==0) mdays[2] = 29    // 입력한 년도가 윤년이면 2월을 29일로 변경
 
     days = 365*(y-1)
