@@ -1,11 +1,11 @@
 package days02
 
 fun main(){
+
     val obj1 = TestClass11()
     println("obj1:$obj1")
 
     println("---------------------------")
-
 
     val obj2 = TestClass12()    // 매개변수가 없는 생성자 호출
     println("obj2:$obj2")
@@ -26,13 +26,13 @@ fun main(){
 
     println("---------------------------")
 
-
     val obj5:TestClass15 = TestClass15(10,20)
     val obj6:TestClass15 = TestClass15()
     val obj7:TestClass15 = TestClass15(10)
 
 
 }
+
 
 class TestClass11{
     init{
