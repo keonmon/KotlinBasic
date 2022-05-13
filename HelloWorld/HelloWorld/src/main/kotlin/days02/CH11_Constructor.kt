@@ -7,28 +7,28 @@ fun main(){
 
     println("---------------------------")
 
-    val obj2 = TestClass12()    // 매개변수가 없는 생성자 호출
+    val obj2 = TestClass12()    // 매개변수가 없는 생성자 동작
     println("obj2:$obj2")
-    println("obj2.v1:${obj2.v1}")
-    println("obj2.v2:${obj2.v2}")
-    val obj3 = TestClass12(100,200) // 매개변수가 있는 생성자 호출
+    println("obj2.v1:${obj2.v1}")   // obj2.v1:0
+    println("obj2.v2:${obj2.v2}")   // obj2.v2:0
+    val obj3 = TestClass12(100,200) // 매개변수가 두 개인 생성자 동작
     println("obj3:$obj3")
-    println("obj3.v1:${obj3.v1}")
-    println("obj3.v2:${obj3.v2}")
+    println("obj3.v1:${obj3.v1}")   // obj3.v1:100
+    println("obj3.v2:${obj3.v2}")   // obj3.v2:200
 
     println("---------------------------")
 
     val obj4 = TestClass13(100,200)
-    println("obj4.a1:${obj4.a1}")
-    println("obj4.a2:${obj4.a2}")
+    println("obj4.a1:${obj4.a1}")   // obj4.a1:100
+    println("obj4.a2:${obj4.a2}")   // obj4.a2:200
     // val obj5 = TestClass13() // 에러 : 매개변수 두개 있는 생성자가 디폴트 생성자를 대체하고
     // 별도로 디폴트 생성자를 오버로딩 하지 않았으므로 이것은 에러가 발생한다.
 
     println("---------------------------")
 
-    val obj5:TestClass15 = TestClass15(10,20)
-    val obj6:TestClass15 = TestClass15()
-    val obj7:TestClass15 = TestClass15(10)
+    // val obj5:TestClass15 = TestClass15(10,20)
+    val obj6:TestClass15 = TestClass15()        // 매개변수가 없는 보조생성자 호출
+    val obj7:TestClass15 = TestClass15(10)  // 매개변수가 하나인 보조생성자 호출
 
 
 }
