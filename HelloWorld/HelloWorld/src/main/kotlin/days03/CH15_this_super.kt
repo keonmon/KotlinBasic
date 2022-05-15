@@ -3,16 +3,26 @@ package days03
 fun main(){
     var obj1 = TestClass21()
     obj1.testMethod1()
+    //메서드의 지역변수 a1 : 100
+    //TestClass21의 멤버변수 a1 : 200
+    //testMethod1() 내부의 testMethod2() 메서드
+    //멤버메서드 testMethod2()
 
     println(" ------------- ")
 
     var obj2 = SubClass11()
     obj2.superMethod1()
+    //SuperClass의 superMethod1()
+    //super.a1 : 100
+    //SubClass의 superMethod1
 
     println(" ------------- ")
 
     var obj3 = SubClass12(600)
     obj2.superMethod1()
+    //SuperClass의 superMethod1()
+    //super.a1 : 100
+    //SubClass의 superMethod1
 
 }
 
