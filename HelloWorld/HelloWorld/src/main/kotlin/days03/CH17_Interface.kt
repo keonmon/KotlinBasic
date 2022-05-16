@@ -14,6 +14,7 @@ fun main(){
 
     println(" ------------------ ")
 
+    // 다중상속
     var obj33 = TestClass33()    // Inter1과 Inter2를 상속(구현)받은 자식클래스
     obj33.inter1_Method1()  // Inter1의 Method1이다.
     obj33.inter1_Method2()  // TestClass33의 Inter1에서 오버라이딩된 Method2이다.
@@ -24,15 +25,11 @@ fun main(){
 
     // 부모중 해당 인터페이스가 구현되어있는 객체만 전달인수로 사용이 가능합니다.
 
-    // obj31는 전달이 불가능하다.
-    testFun1(obj31)
-    // Inter1의 Method1이다.
-    // TestClass31의 Inter1에서 오버라이딩된 Method2이다.
+    // obj32는 test1에 전달이 불가능하다.
+    // testFun1(obj32)
 
-    // obj32는 전달이 불가능하다.
-    testFun2(obj32)
-    // Inter2의 Method1이다.
-    // TestClass32의 Inter2에서 오버라이딩된 Method2이다.
+    // obj31는 전달이 불가능하다.
+    // testFun2(obj31)
 
     // obj33(TestClass33)은 Inter1이 구현되어있어서 인수로 전달이 가능하다.
     testFun1(obj33)
@@ -65,6 +62,7 @@ interface Inter1{
     fun inter1_Method1(){
         println("Inter1의 Method1이다.")
     }   // override의 강제성이 부여되지 않는 메서드
+
     fun inter1_Method2() // override의 강제성이 부여된 메서드
 }
 
@@ -72,6 +70,7 @@ interface Inter2 {
     fun inter2_Method1() {
         println("Inter2의 Method1이다.")
     }
+
     fun inter2_Method2()
 }
 
