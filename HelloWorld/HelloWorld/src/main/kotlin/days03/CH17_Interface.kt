@@ -1,31 +1,49 @@
 package days03
 
 fun main(){
+
     var obj31 = TestClass31()    // Inter1을 상속(구현)받은 자식클래스
-    obj31.inter1_Method1()
-    obj31.inter1_Method2()
+    obj31.inter1_Method1()  // Inter1의 Method1이다.
+    obj31.inter1_Method2()  // TestClass31의 Inter1에서 오버라이딩된 Method2이다.
 
     println(" ------------------ ")
 
     var obj32 = TestClass32()    // Inter2를 상속(구현)받은 자식클래스
-    obj32.inter2_Method1()
-    obj32.inter2_Method2()
+    obj32.inter2_Method1()  // Inter2의 Method1이다.
+    obj32.inter2_Method2()  // TestClass32의 Inter2에서 오버라이딩된 Method2이다.
 
     println(" ------------------ ")
 
     var obj33 = TestClass33()    // Inter1과 Inter2를 상속(구현)받은 자식클래스
-    obj33.inter1_Method1()
-    obj33.inter1_Method2()
-    obj33.inter2_Method1()
-    obj33.inter2_Method2()
+    obj33.inter1_Method1()  // Inter1의 Method1이다.
+    obj33.inter1_Method2()  // TestClass33의 Inter1에서 오버라이딩된 Method2이다.
+    obj33.inter2_Method1()  // Inter2의 Method1이다.
+    obj33.inter2_Method2()  // TestClass33의 Inter2에서 오버라이딩된 Method2이다.
 
     println(" ------------------ ")
 
     // 부모중 해당 인터페이스가 구현되어있는 객체만 전달인수로 사용이 가능합니다.
-    testFun1(obj31)     // obj31는 전달이 불가능하다.
-    testFun2(obj32)     // obj32는 전달이 불가능하다.
-    testFun1(obj33)     // obj33(TestClass33)은 Inter1이 구현되어있어서 인수로 전달이 가능하다.
-    testFun2(obj33)     // obj33(TestClass33)은 Inter2가 구현되어있어서 인수로 전달이 가능하다.
+
+    // obj31는 전달이 불가능하다.
+    testFun1(obj31)
+    // Inter1의 Method1이다.
+    // TestClass31의 Inter1에서 오버라이딩된 Method2이다.
+
+    // obj32는 전달이 불가능하다.
+    testFun2(obj32)
+    // Inter2의 Method1이다.
+    // TestClass32의 Inter2에서 오버라이딩된 Method2이다.
+
+    // obj33(TestClass33)은 Inter1이 구현되어있어서 인수로 전달이 가능하다.
+    testFun1(obj33)
+    // Inter1의 Method1이다.
+    // TestClass33의 Inter1에서 오버라이딩된 Method2이다.
+
+    // obj33(TestClass33)은 Inter2가 구현되어있어서 인수로 전달이 가능하다.
+    testFun2(obj33)
+    // Inter2의 Method1이다.
+    // TestClass33의 Inter2에서 오버라이딩된 Method2이다.
+
 }
 
 fun testFun1(obj:Inter1){
@@ -37,10 +55,6 @@ fun testFun2(obj:Inter2){
     obj.inter2_Method1()
     obj.inter2_Method2()
 }
-
-
-
-
 
 
 
