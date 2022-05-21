@@ -3,6 +3,7 @@ package days03
 // TypeCasting 형변환
 
 fun main(){
+
     var a1:Int = 100
     // var a2:Double = a1
     var a2:Double = a1.toDouble()
@@ -18,13 +19,12 @@ fun main(){
     var d2:Double = d1.toDouble()
 
     // var d3:String = "안녕하세요"
-    // var number4:Int = d3.toInt()
+    // var number4:Int = d3.toInt() // 문자 -> 정수 : 형변환 불가능
 
+    // 스마트 캐스팅
     // 부모클래스 타입 참조변수에 자식 인스턴스를 담을 수 있다.
-    // 스마트캐스팅 발생
-    val super1 : SuperClass4 = SubClass41()
-    // 스마트캐스팅 발생
-    val inter1:Inter4 = SubClass42()
+    val super1:SuperClass4 = SubClass41()   // 스마트캐스팅 발생
+    val inter1:Inter4 = SubClass42()    // 스마트캐스팅 발생
 
     // 자바에서의 문법은? ()강제캐스팅
     // val sub1:SubClass41 = (SubClass41)super1;
@@ -43,8 +43,8 @@ fun main(){
 
     // super1 변수와 inter1 변수를 "자식 클래스의 레퍼런스 변수로 변경시킨다"
     // 자식 클래스 레퍼런스로 값을 옮겨 담는 것이 아니라, 저장된 참조값을 놔두고 변수자료형을 변경한다는 뜻
-    println("변경 후 super1 : $super1 ")
-    println("변경 후 inter1 : $inter1 ")
+    println("변경 후 super1 : $super1 ")   // 변경 후 super1 : days03.SubClass41@330bedb4
+    println("변경 후 inter1 : $inter1 ")   // 변경 후 inter1 : days03.SubClass42@2503dbd3
 
 
     println(" ------------- ")
@@ -65,7 +65,7 @@ fun main(){
     val super2:SuperClass4 = SubClass41()
     val inter2:Inter4 = SubClass42()
     // 부모레퍼런스가 저장하고 있는 자식인스턴스를 자식레퍼런스에 옮길텐데,
-    // 위에서 언급한것처럼 코틀린은 옮기지 않고, 레퍼런스 변수 자체를 변경한다.
+    // 위에서 언급한 것처럼 코틀린은 옮기지 않고, 레퍼런스 변수 자체를 변경한다.
     // 그 전에 변경이 가능한지 검사
     if(super2 is SubClass41){
         super2 as SubClass41    // if문의 중괄호 밖에서도 형변환 결과를 활용할 수 있다.
@@ -83,15 +83,15 @@ fun main(){
 
 }
 
-open class SuperClass4{}
+open class SuperClass4
 interface Inter4
 class SubClass41 : SuperClass4(){
     fun subMethod1(){
-        println("SubClass41의 subMethod1이다.")
+        println("SubClass41의 subMethod1입니다")
     }
 }
 class SubClass42 : Inter4{
     fun subMethod2(){
-        println("SubClass41의 subMethod2이다.")
+        println("SubClass41의 subMethod2입니다")
     }
 }
